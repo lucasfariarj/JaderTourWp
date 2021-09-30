@@ -201,3 +201,29 @@ div h2::before {
     background-color: #007DFF;
     margin-right: 10px;
 }
+
+/* ---------------------- SLIDE ----------------------*/
+
+[data-slide="slider"] {
+    width: 100%;
+    max-width: 500px;
+    height: 20vw;
+    max-height: 100%;
+    position: relative;
+    
+}
+
+[data-slide="slider"] img {
+    opacity: 0;
+    width: 750px;
+    height: 300px;
+    position: absolute;
+    object-fit: cover;
+    transition: opacity 500ms;
+}
+
+[data-slide="slider"] img.selected {
+    opacity: 1;
+}
+
+
