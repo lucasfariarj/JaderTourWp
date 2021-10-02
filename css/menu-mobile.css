@@ -72,15 +72,23 @@
         left:60%; 
     }
 
-    @media (max-width:500px){
+}
 
-        [data-menu="button"] {
-            margin-right: 20px;
-        }
+@media (max-width:500px){
 
-        #menu {
-            width: 130px;
-            left:60%; 
-        } 
+    [data-menu="button"] {
+        margin-right: 20px;
+    }
+
+    #menu {
+        width: 130px;
+        left:60%; 
+    } 
+}
+
+@media (max-width:450px){
+
+    [data-menu="button"] {
+        margin-right: 40px;
     }
 }
