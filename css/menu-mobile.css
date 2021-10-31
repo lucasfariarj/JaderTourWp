@@ -92,3 +92,10 @@
         margin-right: 40px;
     }
 }
+
+@media (max-width:400px){
+
+    [data-menu="button"] {
+        margin-right: 30px;
+    }
+}

@@ -1,0 +1,22 @@
+@media (max-width: 800px){
+
+    [data-slide="slider"] {
+        max-width: 100%;
+    }
+
+    .grid-2 {
+        display: block;
+    }
+
+    .grid-2 [data-slide="slider"] + p{
+        margin:9rem 0 30px 0;
+    }
+
+    [data-tab="content"].active {
+        display: block !important;
+    }
+
+    
+
+}
+

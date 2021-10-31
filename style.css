@@ -1,5 +1,16 @@
+/*
+Theme Name: Jadertour Turismo
+Theme URI: https://jadertour.com.br
+Author: Lucas Faria
+Author URI: https://lkeditor.com.br
+Description: Tema criado para o site Jadertour Turismo
+Version: 1.0
+*/
+
+
 @import url(./css/grid.css);
 @import url(./css/menu-mobile.css);
+@import url(./css/response.css);
 
 * {
     margin: 0;
@@ -8,6 +19,7 @@
 
 img {
     max-width: 100%;
+    margin-bottom: 15px;
 }
 
 header {
@@ -28,7 +40,7 @@ header div {
     color: #fff;
 }
 
-video {
+header video {
     position: absolute;
     z-index: -1;
     object-fit: cover;
@@ -65,6 +77,7 @@ nav li + li {
 
 a {
     text-decoration: none;
+    color:#FE8D01;
 }
 
 h1 {
@@ -92,6 +105,7 @@ ol {
     font-size: 18px;
     font-family: 'IBM Plex Sans', sans-serif;
 }
+
 
 ol li::before {
     display: inline-block;
@@ -163,7 +177,7 @@ input,textarea {
     outline: none;
 }
 
-button {
+button, .btn-primary {
     padding: 1rem;
     text-transform: uppercase;
     font-weight: bold;
@@ -173,6 +187,9 @@ button {
     color:#fff;
     font-size: 18px;
     cursor: pointer;
+    font-family: 'Work Sans', sans-serif;
+    display: inline-block;
+    margin: 10px 0;
 }
 
 footer li a {
@@ -181,6 +198,20 @@ footer li a {
     text-transform: none;
     font-family: 'IBM Plex Sans', sans-serif;
     color:#fff;
+}
+
+.btn-whatsapp {
+    max-width: 100px;
+    min-width: 80px;
+    position: fixed;
+    top:85%;
+    left: 92%;
+    z-index: 1000;
+}
+
+iframe {
+    height: 300px;
+    width: 100%;
 }
 
 footer .logo {
@@ -192,6 +223,7 @@ footer .logo {
 .logo {
     max-width: 100px;
     padding-left: 50px;
+    margin: 0;
 }
 
 .copy {
@@ -207,6 +239,7 @@ footer .logo {
 }
 
 [data-tab="content"].active {
+    margin-top: 2.5rem;
     display: grid;
     position: relative;
     animation: navTab .8s backwards;
@@ -245,35 +278,16 @@ div h2::before {
     padding: 10px;
     text-align: center;
     background-color: #FE8D01;
-    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem;
 }
+
 
 .menu a {
     color: #fff;
-}
-
-/* ---------------------- SLIDE ----------------------*/
-
-[data-slide="slider"] {
     width: 100%;
-    max-width: 500px;
-    height: 20vw;
-    max-height: 100%;
-    position: relative;
-    
-}
-
-[data-slide="slider"] img {
-    opacity: 0;
-    width: 750px;
-    height: 300px;
-    position: absolute;
-    object-fit: cover;
-    transition: opacity 500ms;
-}
-
-[data-slide="slider"] img.selected {
-    opacity: 1;
 }
 
 
