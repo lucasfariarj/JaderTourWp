@@ -273,7 +273,7 @@ div h2::before {
     margin-right: 10px;
 }
 
-.menu {
+.tab-menu {
     background-position: center;
     padding: 10px;
     text-align: center;
@@ -285,7 +285,7 @@ div h2::before {
 }
 
 
-.menu a {
+.tab-menu a {
     color: #fff;
     width: 100%;
 }

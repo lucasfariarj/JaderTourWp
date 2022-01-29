@@ -1,5 +1,17 @@
 <?php
 
+//Clear header
+remove_action('wp_head', 'rsd_link');
+remove_action('wp_head', 'wlwmanifest_link');
+remove_action('wp_head', 'start_post_rel_link', 10, 0 );
+remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+remove_action('wp_head', 'feed_links_extra', 3);
+remove_action('wp_head', 'wp_generator');
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('admin_print_scripts', 'print_emoji_detection_script');
+remove_action('wp_print_styles', 'print_emoji_styles');
+remove_action('admin_print_styles', 'print_emoji_styles');
+
 //Remove menus contents
 function remover_do_menu(){
     remove_menu_page( 'edit-comments.php' );
@@ -7,10 +19,13 @@ function remover_do_menu(){
 
 add_action( 'admin_menu', 'remover_do_menu' );
 
-function cptui_register_my_cpts() {
+//Include custom menu
+add_theme_support('menus');
+
+function custom_post_type_services() {
 
 	/**
-	 * Post Type: Serviços.
+	 * Post Type: Services.
 	 */
 
 	$labels = [
@@ -60,24 +75,24 @@ function cptui_register_my_cpts() {
 	register_post_type( "servicos", $args );
 }
 
-add_action( 'init', 'cptui_register_my_cpts' );
+add_action( 'init', 'custom_post_type_services' );
 
 
-function cptui_register_my_taxes() {
+function custom_poost_type_taxonomy() {
 
 	/**
-	 * Taxonomy: Cidades.
+	 * Taxonomy: Cities
 	 */
 
 	$labels = [
-		"name" => __( "Cidades", "custom-post-type-ui" ),
-		"singular_name" => __( "cidade", "custom-post-type-ui" ),
-		"menu_name" => __( "Cidades Disponíveis", "custom-post-type-ui" ),
+		"name" => __( "Cidades", "custom-post-type-taxonomy" ),
+		"singular_name" => __( "cidade", "custom-post-type-taxonomy" ),
+		"menu_name" => __( "Cidades Disponíveis", "custom-post-type-taxonomy" ),
 	];
 
 	
 	$args = [
-		"label" => __( "Cidades", "custom-post-type-ui" ),
+		"label" => __( "Cidades", "custom-post-type-taxonomy" ),
 		"labels" => $labels,
 		"public" => true,
 		"publicly_queryable" => true,
@@ -97,7 +112,7 @@ function cptui_register_my_taxes() {
 	];
 	register_taxonomy( "cidades", [ "servicos" ], $args );
 }
-add_action( 'init', 'cptui_register_my_taxes' );
+add_action( 'init', 'custom_poost_type_taxonomy' );
 
 
 

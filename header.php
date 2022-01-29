@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,29 +15,26 @@
 
 <body>
     <nav>
-        <div >
+        <div>
             <a href="/"><img class="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png" alt=""></a>
         </div>
         <button data-menu="button" aria-expanded="false" aria-controls="menu">Menu</button>
         <ul data-menu="list" id="menu">
-            <li>
-                <a href="/page-sobre.html">Sobre</a>
-            </li>
-            <li>
-                <a href="./page-nossotour.html">Nosso Tour</a>
-            </li>
-            <li>
-                <a href="./contato.html">Contato</a>
-            </li>
+            <?php $args_menu = array(
+                'menu' => 'menu-principal',
+                'container' => false,
+            );
+            wp_nav_menu($args_menu);
+            ?>
         </ul>
     </nav>
     <header>
-        <video autoplay muted loop >
-            <source type="video/mp4" src="<?php echo get_stylesheet_directory_uri(); ?>/img/drone_video.mp4" >
+        <video autoplay muted loop>
+            <source type="video/mp4" src="<?php echo get_stylesheet_directory_uri(); ?>/img/drone_video.mp4">
         </video>
         <div class="container">
             <h1><?php bloginfo('name'); ?></h1>
-        <p><?php bloginfo('description'); ?></p>
+            <p><?php bloginfo('description'); ?></p>
         </div>
-        
-        </header>
+
+    </header>

@@ -22,7 +22,7 @@ $queryPosts = new WP_Query($args);
             <h2>Nosso Tour</h2>
             <?php if($queryPosts->have_posts()) : while ($queryPosts->have_posts(  )) : $queryPosts->
             the_post(); ?>
-            <div class="menu">
+            <div class="tab-menu">
                 <a href="" data-tab="button">
                     <h3><?php the_title(); ?></h3>
                 </a>

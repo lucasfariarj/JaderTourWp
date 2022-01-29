@@ -1,5 +1,6 @@
 <?php
 // Template Name: Contato
+$contato = get_page_by_title('contato');
 ?>
 
 <?php get_header(); ?>
@@ -16,7 +17,7 @@
                     <li>Endereço: Rua</li>
                     <li>Email: jadertour@gmail.com</li>
                     <li>Telefone: (21) 2666 - 6666</li>
-                    <li>WhatsApp: (21) 9999 - 9999</li>
+                    <li>WhatsApp: <?php the_field('whatsapp',$contato); ?></li>
                 </ol>
         </section>
     </div>
